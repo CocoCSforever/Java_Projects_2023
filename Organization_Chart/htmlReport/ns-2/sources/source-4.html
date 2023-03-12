@@ -1,0 +1,148 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Manager</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">edu.neu.orgchart.entities</a>
+</div>
+
+<h1>Coverage Summary for Class: Manager (edu.neu.orgchart.entities)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Manager</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (6/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    76.9%
+  </span>
+  <span class="absValue">
+    (10/13)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package edu.neu.orgchart.entities;
+&nbsp;
+&nbsp;import java.util.HashSet;
+&nbsp;import java.util.Objects;
+&nbsp;import java.util.Set;
+&nbsp;
+&nbsp;/**
+&nbsp; * Represents a manager who manages managers and individual contributors (IC&#39;s). You must implement the function that
+&nbsp; * returns a set of employees, manager and IC&#39;s that report to this manager.
+&nbsp; */
+&nbsp;public class Manager extends Employee {
+&nbsp;    private Set&lt;Employee&gt; directs;
+&nbsp;    public Manager(String firstName, String middleName, String lastName, Address address){
+<b class="fc">&nbsp;        super(firstName, middleName, lastName, address);</b>
+<b class="fc">&nbsp;        setIsManager(true);</b>
+<b class="fc">&nbsp;        setDirects(null);</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public Set&lt;Employee&gt; getDirects() { return directs; }</b>
+&nbsp;
+&nbsp;    public void setDirects(HashSet&lt;Employee&gt; directs) {
+<b class="fc">&nbsp;        if(directs == null || directs.size()== 0){this.directs = new HashSet&lt;&gt;();}</b>
+<b class="nc">&nbsp;        else{ this.directs = directs; }</b>
+&nbsp;    }
+&nbsp;    public void addDirects(HashSet&lt;Employee&gt; directs) {
+<b class="nc">&nbsp;        this.directs.addAll(directs);</b>
+&nbsp;    }
+<b class="fc">&nbsp;    public void addDirect(Employee e) { directs.add(e); }</b>
+&nbsp;
+<b class="fc">&nbsp;    public boolean removeDirect(Employee e) { return directs.remove(e); }</b>
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean equals(Object o) {
+<b class="fc">&nbsp;        if (this == o) return true;</b>
+<b class="fc">&nbsp;        if (!(o instanceof Manager manager)) return false;</b>
+<b class="fc">&nbsp;        if (!super.equals(o)) return false;</b>
+<b class="nc">&nbsp;        return Objects.equals(getDirects(), manager.getDirects());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // two sets that contain the same elements but in a different order will have different hash codes.
+&nbsp;    // thus if add getDirects into hash function, will get different results for the same manager.
+&nbsp;//    @Override
+&nbsp;//    public int hashCode() {
+&nbsp;//        return Objects.hash(super.hashCode(), getDirects());
+&nbsp;//    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-13 19:53</div>
+</div>
+</body>
+</html>

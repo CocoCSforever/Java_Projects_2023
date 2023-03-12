@@ -1,0 +1,182 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Person</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">edu.neu.orgchart.entities</a>
+</div>
+
+<h1>Coverage Summary for Class: Person (edu.neu.orgchart.entities)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Person</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16.7%
+  </span>
+  <span class="absValue">
+    (2/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (6/18)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package edu.neu.orgchart.entities;
+&nbsp;
+&nbsp;import java.util.Objects;
+&nbsp;
+&nbsp;/**
+&nbsp; * Represents a generic person with their personal information. All employees are people. The Employee class extends
+&nbsp; * person. You are not allowed to remove or modify items in this class. You use this class in various places in this
+&nbsp; * assignment, you may add to it, but you may not modify or remove items.
+&nbsp; */
+&nbsp;public class Person {
+&nbsp;    // subclass can only use getter to have access to private variables
+&nbsp;    // protected for package
+&nbsp;    private String firstName;
+&nbsp;    private String middleName;
+&nbsp;    private String lastName;
+&nbsp;    private Address address;
+&nbsp;
+&nbsp;    // subclass may call the constructor and doesn&#39;t require the constructor to be public,
+&nbsp;    // but we cannot instantiate Person(abstract).
+<b class="fc">&nbsp;    protected Person(String firstName, String middleName, String lastName, Address address){</b>
+<b class="fc">&nbsp;        this.firstName = firstName;</b>
+<b class="fc">&nbsp;        this.middleName = middleName;</b>
+<b class="fc">&nbsp;        this.lastName = lastName;</b>
+<b class="fc">&nbsp;        this.address = address;</b>
+&nbsp;    }
+&nbsp;    public String getFirstName() {
+<b class="nc">&nbsp;        return firstName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setFirstName(String firstName) {
+<b class="nc">&nbsp;        this.firstName = firstName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getMiddleName() {
+<b class="nc">&nbsp;        return middleName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setMiddleName(String middleName) {
+<b class="nc">&nbsp;        this.middleName = middleName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getLastName() {
+<b class="nc">&nbsp;        return lastName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setLastName(String lastName) {
+<b class="nc">&nbsp;        this.lastName = lastName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Address getAddress() {
+<b class="fc">&nbsp;        return address;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAddress(Address address) {
+<b class="nc">&nbsp;        this.address = address;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean equals(Object o) {
+<b class="nc">&nbsp;        if (this == o) return true;</b>
+<b class="nc">&nbsp;        if (!(o instanceof Person person)) return false;</b>
+<b class="nc">&nbsp;        return Objects.equals(getFirstName(), person.getFirstName()) &amp;&amp; Objects.equals(getMiddleName(), person.getMiddleName()) &amp;&amp; Objects.equals(getLastName(), person.getLastName()) &amp;&amp; Objects.equals(getAddress(), person.getAddress());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int hashCode() {
+<b class="nc">&nbsp;        return Objects.hash(getFirstName(), getMiddleName(), getLastName(), getAddress());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        return &quot;Person{&quot; +</b>
+&nbsp;                &quot;firstName=&#39;&quot; + firstName + &#39;\&#39;&#39; +
+&nbsp;                &quot;, middleName=&#39;&quot; + middleName + &#39;\&#39;&#39; +
+&nbsp;                &quot;, lastName=&#39;&quot; + lastName + &#39;\&#39;&#39; +
+&nbsp;                &quot;, address=&quot; + address +
+&nbsp;                &#39;}&#39;;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-13 19:53</div>
+</div>
+</body>
+</html>
